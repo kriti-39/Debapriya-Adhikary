@@ -1,3 +1,35 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+/* Move arrows outside and style them */
+.custom-swiper .swiper-button-prev,
+.custom-swiper .swiper-button-next {
+  color: #f5e6d3;          /* light peach */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+}
+
+.custom-swiper .swiper-button-prev {
+  left: -2.5rem;           /* pushes it outside */
+}
+
+.custom-swiper .swiper-button-next {
+  right: -2.5rem;          /* pushes it outside */
+}
+
+/* Hover effect */
+.custom-swiper .swiper-button-prev:hover,
+.custom-swiper .swiper-button-next:hover {
+  color: #e5d1b8;          /* slightly softer on hover */
+}
+
+/* Remove big default arrow background */
+.custom-swiper .swiper-button-prev::after,
+.custom-swiper .swiper-button-next::after {
+  font-size: 1.5rem;       /* smaller arrows */
+  font-weight: bold;
+}

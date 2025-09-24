@@ -1,33 +1,33 @@
 import React, { useEffect, useState } from 'react';
 import { GiHamburgerMenu } from 'react-icons/gi';
-import { Link } from 'react-router-dom'; // Importing Link for navigation
 
 const NavMenu = [
-  { id: 1, title: 'Home', link: '/' },
-  { id: 2, title: 'About', link: '/about' },
-  { id: 3, title: 'Contact', link: '/contact' },
+  { id: 1, title: 'Home', link: '#home' },
+  { id: 2, title: 'About', link: '#about' },
+  { id: 3, title: 'Performances', link: '#performances' },
+  { id: 4, title: 'Learning', link: '#learning' },
+  { id: 5, title: 'Gallery', link: '#gallery' },
+  { id: 6, title: 'Achievements', link: '#achievements' },
+  { id: 7, title: 'Contact', link: '#contact' },
 ];
 
 const Navbar = () => {
   const [showNav, setShowNav] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // State for mobile menu
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScroll = window.scrollY;
-
       if (currentScroll > lastScrollY && currentScroll > 100) {
-        setShowNav(false); // scrolling down
+        setShowNav(false); // Scroll down
       } else {
-        setShowNav(true); // scrolling up
+        setShowNav(true); // Scroll up
       }
-
       setLastScrollY(currentScroll);
     };
 
     window.addEventListener('scroll', handleScroll);
-
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY]);
 
@@ -36,62 +36,60 @@ const Navbar = () => {
   };
 
   return (
-    <main
+    <nav
       className={`fixed top-0 w-full z-50 transition-transform duration-500 ${
         showNav ? 'translate-y-0' : '-translate-y-full'
       }`}
     >
-      <div className="py-6 px-6 bg-transparent text-white">
-        <div className="container">
-          <div className="flex justify-between items-center">
-            <div className="text-2xl font-bold">Logo</div>
+      <div className="bg-black bg-opacity-40 text-white px-2 py-6">
+        <div className="max-w-7xl mx-auto flex justify-between items-center">
+          <h1 className="text-2xl font-serif font-bold tracking-wide">DA</h1>
 
-            {/* nav menu for desktop */}
-            <ul className="hidden md:flex gap-4">
-              {NavMenu.map((menu) => (
-                <li key={menu.id}>
-                  <Link
-                    to={menu.link}
-                    className="inline-block px-6 py-2 uppercase hover:bg-primary duration-200 rounded-md hover:shadow-[0px_0px_20px_8px_#d2e6ff]"
-                  >
-                    {menu.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-
-            {/* hamburger icon for mobile */}
-            <div className="md:hidden" onClick={toggleMobileMenu}>
-              <GiHamburgerMenu className="text-xl" />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* mobile menu */}
-      <div
-        className={`fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-40 ${
-          isMobileMenuOpen ? 'block' : 'hidden'
-        }`}
-        onClick={toggleMobileMenu} // Close menu if the overlay is clicked
-      >
-        <div className="fixed top-0 left-0 w-2/3 bg-gray-800 text-white p-6">
-          <ul className="flex flex-col gap-6">
+          {/* Desktop menu */}
+          <ul className="hidden md:flex gap-6 text-sm font-medium tracking-wider">
             {NavMenu.map((menu) => (
               <li key={menu.id}>
-                <Link
-                  to={menu.link}
-                  className="text-xl uppercase hover:bg-primary duration-200 rounded-md"
-                  onClick={toggleMobileMenu} // Close menu after click
+                <a
+                  href={menu.link}
+                  className="hover:text-yellow-300 transition duration-200"
                 >
                   {menu.title}
-                </Link>
+                </a>
               </li>
             ))}
           </ul>
+
+          {/* Hamburger */}
+          <button onClick={toggleMobileMenu} className="md:hidden">
+            <GiHamburgerMenu className="text-xl" />
+          </button>
         </div>
       </div>
-    </main>
+
+      {/* Mobile menu overlay */}
+      {isMobileMenuOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-70 z-40" onClick={toggleMobileMenu}>
+          <div
+            className="bg-gray-900 text-white w-2/3 h-full p-6"
+            onClick={(e) => e.stopPropagation()} // prevent parent onClick
+          >
+            <ul className="flex flex-col gap-6 mt-10 text-lg tracking-wider">
+              {NavMenu.map((menu) => (
+                <li key={menu.id}>
+                  <a
+                    href={menu.link}
+                    className="hover:text-yellow-300 transition duration-200"
+                    onClick={toggleMobileMenu}
+                  >
+                    {menu.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      )}
+    </nav>
   );
 };
 
