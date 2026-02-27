@@ -1,4 +1,5 @@
 // src/components/Footer/Footer.jsx
+
 import React from "react";
 import {
   FaInstagram,
@@ -12,83 +13,94 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="bg-[#1f1f1f] text-[#f5e6d3] py-16 px-6 md:px-20">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-end gap-12">
-        
+    <footer className="bg-[#1c1c1c] text-[#f6f6f6] py-10 px-8 md:px-20">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-end gap-12">
+
         {/* Contact Info */}
         <div className="flex-1">
-          <h3 className="text-6xl font-bold mb-6  inline-block">
-            Contact Us
+          <h3 className="text-3xl md:text-5xl font-serif font-bold mb-6">
+            Contact
           </h3>
-          <ul className="space-y-4 text-base">
+
+          <ul className="space-y-4 text-sm md:text-base text-white/80">
             <li className="flex items-start gap-3">
-              <FaPhoneAlt className="text-[#8b5e3c] mt-1 text-lg" />
-              <span>+91 98765 43210</span>
+              <FaPhoneAlt className="mt-1 text-white/60" />
+              <span>+91 9038674555</span>
             </li>
+
             <li className="flex items-start gap-3">
-              <FaEnvelope className="text-[#8b5e3c] mt-1 text-lg" />
-              <span>info@classicalartist.com</span>
+              <FaEnvelope className="mt-1 text-white/60" />
+              <span>musingswithdeva@gmail.com</span>
             </li>
+
             <li className="flex items-start gap-3 leading-relaxed">
-              <FaMapMarkerAlt className="text-[#8b5e3c] mt-1 text-lg" />
+              <FaMapMarkerAlt className="mt-1 text-white/60" />
               <span>
-                58/30 Rabindrapally, Mandir Para, Netaji Subhas Road, 
-                Nona Chandanpukur, Kolkata - 700122
+                A wing 1804, Aarambh Tower (Satellite Developers)
+Shivaji Nagar, Kurar Village, Malad East , Mumbai - 400097
               </span>
             </li>
           </ul>
         </div>
 
         {/* Social Media */}
-        <div className="md:text-right md:pr-8 flex flex-col justify-end">
-          <ul className="space-y-2 text-base">
+        <div className="flex-1 md:text-right">
+          <h4 className="text-3xl font-serif font-semibold mb-6 md:mb-6">
+            Connect
+          </h4>
+
+          <ul className="space-y-4 text-sm md:text-base">
             <li>
               <a
                 href="https://www.instagram.com/musingswithdeva/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 hover:text-[#8b5e3c] transition md:justify-end"
+                className="flex items-center gap-3 hover:text-white transition md:justify-end text-white/80"
               >
-                <FaInstagram className="text-lg" /> <span>@musingswithdeva</span>
+                <FaInstagram /> <span>@musingswithdeva</span>
               </a>
             </li>
+
             <li>
               <a
                 href="https://www.facebook.com/Debapriyaadhikarysings/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 hover:text-[#8b5e3c] transition md:justify-end"
+                className="flex items-center gap-3 hover:text-white transition md:justify-end text-white/80"
               >
-                <FaFacebookF className="text-lg" /> <span>Debapriya Adhikary</span>
+                <FaFacebookF /> <span>Debapriya Adhikary</span>
               </a>
             </li>
+
             <li>
               <a
                 href="https://www.linkedin.com/in/debapriya-adhikary-177214b/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 hover:text-[#8b5e3c] transition md:justify-end"
+                className="flex items-center gap-3 hover:text-white transition md:justify-end text-white/80"
               >
-                <FaLinkedinIn className="text-lg" /> <span>Debapriya Adhikary</span>
+                <FaLinkedinIn /> <span>Debapriya Adhikary</span>
               </a>
             </li>
+
             <li>
               <a
                 href="https://www.youtube.com/@DebapriyaAdhikary"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 hover:text-[#8b5e3c] transition md:justify-end"
+                className="flex items-center gap-3 hover:text-white transition md:justify-end text-white/80"
               >
-                <FaYoutube className="text-lg" /> <span>Debapriya Adhikary</span>
+                <FaYoutube /> <span>Debapriya Adhikary</span>
               </a>
             </li>
           </ul>
         </div>
+
       </div>
 
-      {/* Bottom copyright */}
-      <div className="mt-12 border-t border-[#444] pt-6 text-center text-sm text-gray-400">
-        &copy; {new Date().getFullYear()} Classical Artist. All rights reserved.
+      {/* Bottom Copyright */}
+      <div className="mt-10 border-t border-white/10 pt-6 text-center text-sm text-white/50">
+        &copy; {new Date().getFullYear()} Debapriya Adhikary. All rights reserved.
       </div>
     </footer>
   );
