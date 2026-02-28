@@ -4,6 +4,7 @@ import React, { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
+import { Link } from "react-router-dom";
 
 const videos = [
   {
@@ -45,7 +46,6 @@ const Performances = () => {
       className="py-10 md:py-24 bg-[#1c1c1c] text-[#f6f6f6] px-6 md:px-10 lg:px-20"
     >
       <div className="max-w-7xl mx-auto">
-
         {/* Section Heading */}
         <h2 className="text-3xl md:text-4xl font-serif font-bold text-center md:text-left">
           Performances
@@ -73,7 +73,6 @@ const Performances = () => {
             {videos.map((video, index) => (
               <SwiperSlide key={index}>
                 <div className="bg-[#f6f6f6] rounded-xl shadow-lg px-1 pt-1 flex flex-col">
-
                   {/* Video */}
                   <div className="relative w-full pt-[56.25%] rounded-lg overflow-hidden mb-4">
                     <iframe
@@ -90,7 +89,6 @@ const Performances = () => {
                   <h3 className="font-semibold pb-3 px-2 text-[#434343] leading-snug">
                     {video.title}
                   </h3>
-
                 </div>
               </SwiperSlide>
             ))}
@@ -106,12 +104,14 @@ const Performances = () => {
             ←
           </button>
 
-          <a
-            href="/performances"
-            className="inline-block px-6 py-2 border border-white/60 rounded-full hover:bg-white hover:text-black transition text-center"
+          <Link
+            to="/performances"
+            className="inline-block px-6 py-2 border border-white/60 
+             rounded-full hover:bg-white hover:text-black 
+             transition text-center"
           >
             All Performances
-          </a>
+          </Link>
 
           <button
             onClick={() => swiperRef.current?.slideNext()}
@@ -120,7 +120,6 @@ const Performances = () => {
             →
           </button>
         </div>
-
       </div>
     </section>
   );

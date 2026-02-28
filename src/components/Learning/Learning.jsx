@@ -4,6 +4,7 @@ import React, { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
+import { Link } from "react-router-dom";
 
 const videos = [
   {
@@ -36,12 +37,12 @@ const videos = [
   },
 ];
 
-const Performances = () => {
+const Learning = () => {
   const swiperRef = useRef(null);
 
   return (
     <section
-      id="performances"
+      id="learning"
       className="py-10 md:py-24 bg-[#f6f6f6] text-[#1c1c1c] px-8 md:px-10 lg:px-20"
     >
       <div className="max-w-7xl mx-auto">
@@ -108,15 +109,15 @@ const Performances = () => {
     ←
   </button>
 
-  <a
-    href="/performances"
+  <Link
+    to="/learning"
     className="inline-block px-6 py-2 border border-[#1c1c1c]/60 
                text-[#1c1c1c] rounded-full 
                hover:bg-[#1c1c1c] hover:text-white 
                transition duration-300 text-center"
   >
     Explore More
-  </a>
+  </Link>
 
   <button
     onClick={() => swiperRef.current?.slideNext()}
@@ -133,4 +134,4 @@ const Performances = () => {
   );
 };
 
-export default Performances;
+export default Learning;

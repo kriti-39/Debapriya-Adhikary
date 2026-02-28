@@ -13,7 +13,7 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="bg-[#1c1c1c] text-[#f6f6f6] py-10 px-8 md:px-20">
+    <footer className="bg-[#1c1c1c] text-[#f6f6f6] py-10 px-8 md:px-20 md:pt-20">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-end gap-12">
 
         {/* Contact Info */}
@@ -99,7 +99,7 @@ Shivaji Nagar, Kurar Village, Malad East , Mumbai - 400097
       </div>
 
       {/* Bottom Copyright */}
-      <div className="mt-10 border-t border-white/10 pt-6 text-center text-sm text-white/50">
+      <div className="mt-10  border-t border-white/10 pt-6 text-center text-sm text-white/50">
         &copy; {new Date().getFullYear()} Debapriya Adhikary. All rights reserved.
       </div>
     </footer>

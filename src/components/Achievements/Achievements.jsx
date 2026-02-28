@@ -61,11 +61,11 @@ const awardsChronology = [
   },
 ];
 
-const Awards = () => {
+const Achievements = () => {
   return (
     <>
       {/* ===== DARK SECTION – ACHIEVEMENTS ===== */}
-      <section className="bg-[#1c1c1c] text-white py-10 px-6 md:px-10">
+      <section className="bg-[#1c1c1c] text-white py-12 px-6 md:px-10 md:pb-20">
         <div className="max-w-5xl mx-auto">
 
           <h2 className="text-4xl md:py-10 md:text-6xl font-serif font-bold mb-12">
@@ -109,12 +109,12 @@ const Awards = () => {
       </section>
 
       {/* ===== LIGHT SECTION – FELLOWSHIPS & AFFILIATIONS ===== */}
-      <section className="bg-[#f6f6f6] text-[#2b2a2a] py-10 px-8 md:px-40">
+      <section className="bg-[#f6f6f6] text-[#2b2a2a] py-10 px-8 md:px-40 md:pb-20">
         <div className=" mx-auto space-y-10">
 
           {/* Fellowships */}
           <div>
-            <h3 className="text-3xl md:text-4xl font-serif font-semibold mb-4">
+            <h3 className="text-3xl md:text-4xl font-serif font-semibold mb-4 md:mt-10">
               Fellowships & Scholarships
             </h3>
 
@@ -147,4 +147,4 @@ const Awards = () => {
   );
 };
 
-export default Awards;
+export default Achievements;

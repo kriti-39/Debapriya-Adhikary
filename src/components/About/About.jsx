@@ -8,7 +8,7 @@ const About = () => {
       id="about"
       className="py-10 md:py-24 bg-[#f6f6f6] text-[#2b2a2a]"
     >
-      <div className="max-w-8xl mx-auto flex flex-col md:flex-row items-center gap-8 md:gap-20 px-8 md:px-12 lg:px-20">
+      <div className="max-w-8xl mx-auto flex flex-col md:flex-row items-center gap-8 md:gap-10 px-8 md:px-10 lg:px-20">
 
         {/* Image */}
         <div className="w-full md:w-1/2 flex justify-center">
